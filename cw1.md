@@ -13,5 +13,5 @@ x jest kuzynem y
 y jest bratem/siostra partnera x.
 # G
 X jest bratem/siostra Y.
-##Zadanie 2
+## Zadanie 2
 #
