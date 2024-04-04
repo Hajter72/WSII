@@ -5,13 +5,13 @@ x jest rodzenstwem y i odwrotnie
 x jest kuzynem y i odwrotnie
 # C 
 X i Y jest dziadkami tego samego wnuka
-#D
+# D
 Y jest przybranym rodzicem X
-#E
+# E
 x jest kuzynem y
-#F
+# F
 y jest bratem/siostra partnera x.
-#G
+# G
 X jest bratem/siostra Y.
 ##Zadanie 2
 #
