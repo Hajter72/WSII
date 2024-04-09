@@ -85,6 +85,73 @@ loyalto(Macrus, Caesar) z zestawiamy to z  ¬man(x4)∨¬ruler(y1)∨¬tryassass
 ¬tryassass(Marcus,Caesar) zestawiamy to z tryassass(Marcus,Caesar)
 Otrzymujemy klauzulę pustą, dowód zakończono.
 ```
+## Zadanie 2
+# A
+```
+1. ∀x :food(x) → like(Jan, x)
+```
+```
+2. food(Apple)
+```
+```
+3. food(Chicken)
+```
+```
+4. ∀x : ∀y : eat(y,x) ∧ alive(y) → food(x)
+```
+```
+5. eat(Adam,Nuts) ∧ alive(Adam)
+```
+```
+6. ∀x : eat(Adam,x) → eat(Basia,x)
+```
+
+#B
+```
+1. ¬food(x1) ∨ like(Jan, x1)
+```
+```
+2. food(Apple)
+```
+```
+3. food(Chicken)
+```
+```
+4. ¬eat(y1,x2) ∨ ¬alive(y1) ∨ food(x2)
+```
+```
+5. eat(Adam,Nuts)
+```
+```
+6. alive(Adam)
+```
+```
+7. ¬eat(Adam,x3) ∨ eat(Basia,x3)
+```
+# C
+```
+Udowodnij metodą rezolucji (ewentualnie uzupełniając stworzone poprzednio
+formuły), że Jan lubi orzeszki. Przyjmujemy więc ¬like(Jan, nuts)
+```
+```
+¬like(Jan, nuts) podstawiamy pod to formułę 1, gdzie x1 to nuts
+¬food(nuts) podstawiamy to pod formułe 4, gdzie x2 to nuts
+¬eat(y1,nuts) ∨ ¬alive(y1) podstawiamy pod formułę 5 i 6 wykorzystując jako y1 Adama
+¬eat(Bogdan,nuts) ∨ ¬alive(Bogdan) podstawiamy pod formułe 4
+food(nuts) podstawiamy pod formułę 1
+like(Jan, nuts) Jan lubi orzeszki!
+```
+# D
+```
+Spróbuj (metodą rezolucji) odpowiedzieć na pytanie, jakie pożywienie je Basia. Przyjmijmy więc ¬eat(Basia,x3)
+```
+```
+¬eat(Basia,x3) podstawiamy 7.
+¬eat(Adam,x3) podstawiamy 5. pod x3 wstawiamy nuts
+¬eat(Adam,nuts) podstawiamy 4. pod y1 Adama, pod x2 nuts
+¬alive(Adam) ∨ food(nuts) podstawiamy 6.
+food(nuts) Basia je orzechy.
+```
 ## Zadanie 3
 # Baza predykatów
 ```
