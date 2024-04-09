@@ -106,9 +106,59 @@ Otrzymujemy klauzulę pustą, dowód zakończono.
 6. ∀x: ∀t1: ∀t2: man(x) ∧ born(x,t1) ∧ gt(t2-t1,150) → dead(x,t2)
 ```
 ```
-now=2021
+7. now=2021
 ```
 ```
-∀x: ∀t1: ∀t2: died(x,t1) ∧ gt(t2,t1) → dead(x,t2)
+8. ∀x: ∀t1: ∀t2: died(x,t1) ∧ gt(t2,t1) → dead(x,t2)
 ```
-
+# Dowodzenie tego, ze Markus nie żyje
+```
+dead(Marcus, now) reguła 8.
+died(Marcus, t1) ∧ gt(now,t1) reguła 4
+Pompeian(Marcus) ∧ gt(now,79) reguła 2
+gt(now,79) równość z regułą 7
+gt(2021,79) obliczenie gt i tyle
+```
+# Dowod 2
+```
+dead(Marcus, now) reguła 6.
+man(Marcus) ∧ born(Marcus,t1) ∧ gt(now-t1,150) reguła 1
+born(Marcus,t1) ∧ gt(now-t1,150) reguła 3
+gt(now-40,150) równość 7
+gt(2021-40,150)
+gt(1981,150)
+```
+# Zamiana na CNF funckji
+```
+1.man(Marcus)
+```
+```
+2.Pompeian(Marcus)
+```
+```
+3.born(Marcus,40)
+```
+```
+4. ¬Pompeian(x1) ∨ died(x1,79)
+```
+```
+5.erupted(Volcano,79)
+```
+```
+6. ¬man(x2) ∨ ¬born(x2,t1) ∨ ¬gt(t2-t1,150) ∨ dead(x,t2)
+```
+```
+7. now=2021
+```
+```
+8. ¬died(x3,t3) ∨ ¬gt(t4,t3) ∨ dead(x3,t4)
+```
+# Dowod 3
+```
+Przyjmujemy, że Markus żyje
+¬dead(Marcus, now), podstawiamy z ¬died(x3,t3) ∨ ¬gt(t4,t3) ∨ dead(x3,t4), gdzie 'Macrus' to x3, a 'now' to t4
+¬died(Marcus,t3) ∨ ¬gt(now,t3) podstawiamy z 4, gdzie x1 to Marcus, a t3 to 79
+¬Pompeian(Marcus)  ∨ ¬gt(now,79) pod 'now' podstawiamy wartość z 7
+¬Pompeian(Marcus)  ∨ ¬gt(2021,79) redukcja
+¬Pompeian(Marcus) zestawiamy z 2. i otrzymujemy klauzulę pustą, zakończyliśmy dowód.
+```
