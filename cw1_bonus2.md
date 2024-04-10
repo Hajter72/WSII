@@ -137,20 +137,19 @@ formuły), że Jan lubi orzeszki. Przyjmujemy więc ¬like(Jan, nuts)
 ¬like(Jan, nuts) podstawiamy pod to formułę 1, gdzie x1 to nuts
 ¬food(nuts) podstawiamy to pod formułe 4, gdzie x2 to nuts
 ¬eat(y1,nuts) ∨ ¬alive(y1) podstawiamy pod formułę 5 i 6 wykorzystując jako y1 Adama
-¬eat(Bogdan,nuts) ∨ ¬alive(Bogdan) podstawiamy pod formułe 4
+¬eat(Adam,nuts) ∨ ¬alive(Adam) podstawiamy pod formułe 4
 food(nuts) podstawiamy pod formułę 1
 like(Jan, nuts) Jan lubi orzeszki!
 ```
 # D
 ```
-Spróbuj (metodą rezolucji) odpowiedzieć na pytanie, jakie pożywienie je Basia. Przyjmijmy więc ¬eat(Basia,x3)
+Spróbuj (metodą rezolucji) odpowiedzieć na pytanie, jakie pożywienie je Basia. Przyjmijmy więc eat(Basia,x3)
 ```
 ```
-¬eat(Basia,x3) podstawiamy 7.
-¬eat(Adam,x3) podstawiamy 5. pod x3 wstawiamy nuts
-¬eat(Adam,nuts) podstawiamy 4. pod y1 Adama, pod x2 nuts
-¬alive(Adam) ∨ food(nuts) podstawiamy 6.
-food(nuts) Basia je orzechy.
+eat(Basia,x3) podstawiamy 7.
+¬eat(Adam,x3) ∨ eat(Basia,x3)  podstawiamy 5. pod x3 wstawiamy nuts
+¬eat(Adam,nuts) ∨ eat(Basia,nuts)  podstawiamy 6
+eat(Basia,nuts) Basia je orzechy.
 ```
 ## Zadanie 3
 # Baza predykatów
