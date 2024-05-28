@@ -9,13 +9,13 @@ class Neuron:
         else:
             self.ws = np.random.rand(n_inputs)
 
-    def _f(self, x):  
+    def _f(self, x):
         return max(x * .1, x)
 
-    def _f_prime(self, x):  
+    def _f_prime(self, x):
         return 1. if x > 0 else .1
 
-    def __call__(self, xs):  
+    def __call__(self, xs):
         self.last_input = xs
         return self._f(xs @ self.ws + self.b)
 
@@ -39,10 +39,10 @@ class Layer:
 class NeuralNetwork:
     def __init__(self):
         self.layers = [
-            Layer(3, 4), 
-            Layer(4, 4),  
-            Layer(4, 4),  
-            Layer(4, 1)  
+            Layer(3, 4),
+            Layer(4, 4),
+            Layer(4, 4),
+            Layer(4, 1)
         ]
 
     def __call__(self, xs):
@@ -73,14 +73,14 @@ class NeuralNetwork:
             print('epoch %d/%d, mse=%.6f' % (i+1, epochs, err / len(X_train)))
 
 
-nn = NeuralNetwork()
 
-xs = np.array([0.1, 0.2, 0.3])
 
-output = nn(xs)
+data = np.array([0.2, 0.4, 0.1])
+network = NeuralNetwork()
+output = network(data)
 
-classification = 1 if output > 0.5 else 0
-print(classification)
+output = 1 if output > 0.5 else 0
+print(output)
 
 
 
@@ -105,9 +105,9 @@ def draw_neural_net(ax, left, right, bottom, top, layer_sizes, layer_colors):
                                   [layer_top_a - m * v_spacing, layer_top_b - o * v_spacing], c='k')
                 ax.add_artist(line)
 
-layer_colors = ['red', 'blue', 'blue', 'green']
-fig = plt.figure(figsize=(20, 20))
-ax = fig.gca()
+colors = ['red', 'blue', 'blue', 'green']
+figure = plt.figure(figsize=(20, 20))
+ax = figure.gca()
 ax.axis('off')
-draw_neural_net(ax, .2, .8, .2, .8, [3, 4, 4, 1], layer_colors)
+draw_neural_net(ax, .2, .8, .2, .8, [3, 4, 4, 1], colors)
 plt.show()
